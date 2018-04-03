@@ -20,7 +20,8 @@ ChText::ChText(CH_FONT fontFace_Zh, double fontScale, cv::Scalar color_cv, doubl
 
 ChText::~ChText()
 {
-
+    FT_Done_Face(face_);
+    FT_Done_FreeType(library_);
 }
 
 bool ChText::IsChange(CH_FONT fontFace_Zh, double fontScale, cv::Scalar color_cv, double space_radio, double sep_radio, double transp_radio)
